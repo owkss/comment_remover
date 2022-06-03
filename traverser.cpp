@@ -103,6 +103,8 @@ static CXChildVisitResult visit(CXCursor c, CXCursor parent, CXClientData client
                     ranges->push_back(r);
                 }
             }
+
+            clang_disposeTokens(unit, tokens, num_tokens);
         }
         break;
     default:
